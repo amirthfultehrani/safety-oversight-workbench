@@ -9,7 +9,7 @@
 
 **🟢 Live Demo:** [View on Vercel](https://safety-oversight-workbench.vercel.app/)
 
-<video src="./src/assets/safetyoversightworkbench-heroDemo.mp4" controls autoplay loop muted></video>
+<video src="https://github.com/amirthfultehrani/safety-oversight-workbench/raw/main/src/assets/safetyoversightworkbench-heroDemo.mp4" controls autoplay loop muted></video>
 
 ## 🎯 Project Purpose: Epistemic Friction
 
@@ -108,6 +108,6 @@ The Safety Oversight Workbench operates through a strictly enforced, state-drive
 ## 🤝 Community & Meta
 
 *   **Testing:** Run `npm run lint` to execute the ESLint suite and ensure code quality.
-*   **Contributing:** Pull requests are welcomed! Please check out `CONTRIBUTING.md` for guidelines on how to add new edge cases to `src/cases.js`.
-*   **Security:** Do not file public issues for vulnerabilities. Please see `SECURITY.md`.
-*   **License:** This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+*   **Contributing:** Pull requests are welcomed! Please check out [`CONTRIBUTING.md`](./CONTRIBUTING.md) for guidelines on how to add new edge cases to `src/cases.js`.
+*   **Security:** Do not file public issues for vulnerabilities. Please see [`SECURITY.md`](./SECURITY.md).
+*   **License:** This project is licensed under the MIT License. See the [`LICENSE`](./LICENSE) file for details.
