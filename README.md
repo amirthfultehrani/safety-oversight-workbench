@@ -71,7 +71,7 @@ npm run dev
 
 3.  **Resolve Evidence:** Navigate to the **Evidence Vault** and use the **Conflicting Evidence Resolver** slider.
     *   **What is this?** Resolver juxtaposes the primary model's generated claim (**Source A**) against a simulated external database like PubMed or the SEC (**Source B**). 
-    *   **Why?** By forcing you to manually drag the slider to either flag deception or confirm ground truth, the UI breaks automation bias and ensures the reviewer has actually read and verified the external evidence.
+    *   **Why a slider instead of buttons?** If reviewers are given a simple binary "Reject" or "Verify" button, they inevitably fall into cognitive autopilot and start clicking without reading. The slider enforces *Epistemic Friction*. By requiring the user to click, hold, and physically drag the slider all the way across the screen to exactly 0 or 100, this physical hurdle breaks muscle memory and forces the reviewer's brain to slow down long enough to actually read the conflicting evidence.
 
     ![Evidence Adjudication](./src/assets/safetyoversightworkbench_evidenceSlider-screenshot.png)
 

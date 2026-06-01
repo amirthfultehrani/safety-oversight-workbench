@@ -460,7 +460,10 @@ export default function App() {
                 <div className={`absolute top-0 left-0 w-1.5 h-full transition-colors duration-300 ${gptRerouteClicked ? 'bg-frontier-green' : 'bg-frontier-blue'}`}></div>
                 <div className={`p-3 border-b transition-colors duration-300 ${gptRerouteClicked ? 'bg-frontier-green/10 border-frontier-green/20' : 'bg-frontier-blue/10 border-frontier-blue/20'}`}>
                   <h3 className={`text-xs font-bold uppercase flex items-center justify-between transition-colors duration-300 ${gptRerouteClicked ? 'text-frontier-green' : 'text-frontier-blue'}`}>
-                    Expert Safety Reroute (Control Model)
+                    <div className="flex items-center gap-1.5 cursor-help" title="In production, a secondary Control Model monitors the primary model and intervenes upon detecting a policy violation.">
+                      Expert Safety Reroute (Control Model)
+                      <Info size={14} className="opacity-70 hover:opacity-100 transition-opacity" />
+                    </div>
                     {gptRerouteClicked && <CheckCircle2 size={14} className="text-frontier-green animate-in zoom-in duration-300" />}
                   </h3>
                   <div className="text-[10px] text-blue-300/70 mt-1">{activeCase.expertReroute.model}</div>
@@ -572,6 +575,9 @@ export default function App() {
                       <span className="flex items-center gap-1.5"><AlertTriangle size={14} /> Conflicting Evidence Resolver</span>
                       {conflictResolved && <CheckCircle2 size={14} className="text-frontier-green" />}
                     </h3>
+                    <p className="text-[10px] text-frontier-amber/80 mt-1 leading-tight normal-case font-normal font-sans">
+                      <strong className="text-frontier-amber">Epistemic Friction:</strong> A continuous drag is required to prevent accidental clicks. Drag fully to 0 to reject Source A, or fully to 100 to verify Source B.
+                    </p>
                   </div>
                   <div className="p-3 space-y-3">
                     <div className="flex flex-col gap-2">
@@ -620,9 +626,9 @@ export default function App() {
                             className="conflict-slider"
                           />
                           <div className="flex justify-between px-[2px] mt-0.5">
-                            <span className="text-[8px] text-frontier-red/50 font-mono">0</span>
+                            <span className="text-[8px] text-frontier-red/50 font-mono">0 (Reject A)</span>
                             <span className="text-[8px] text-gray-600 font-mono">50</span>
-                            <span className="text-[8px] text-frontier-green/50 font-mono">100</span>
+                            <span className="text-[8px] text-frontier-green/50 font-mono">100 (Verify B)</span>
                           </div>
                         </div>
 
