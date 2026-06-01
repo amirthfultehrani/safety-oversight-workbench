@@ -9,7 +9,7 @@
 
 **🟢 Live Demo:** [View on Vercel](https://safety-oversight-workbench.vercel.app/)
 
-https://github.com/amirthfultehrani/safety-oversight-workbench/raw/main/src/assets/safetyoversightworkbench-heroDemo.mp4
+<video src="https://raw.githubusercontent.com/amirthfultehrani/safety-oversight-workbench/main/src/assets/safetyoversightworkbench-heroDemo.mp4" controls autoplay loop muted></video>
 
 ## 🎯 Project Purpose: Epistemic Friction
 
