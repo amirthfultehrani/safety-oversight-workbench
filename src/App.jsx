@@ -274,7 +274,7 @@ export default function App() {
             </div>
           </div>
           
-          <div className="flex w-full py-3 gap-2">
+          <div className="grid grid-cols-2 lg:flex w-full py-3 gap-2">
             {activeCase.ribbon.map((lane, i) => (
               <div 
                 key={i} 
@@ -302,10 +302,10 @@ export default function App() {
         </div>
       </header>
 
-      <main className="flex-1 max-w-[1800px] w-full mx-auto p-4 grid grid-cols-12 gap-4 relative mt-2">
+      <main className="flex-1 max-w-[1800px] w-full mx-auto p-4 flex flex-col lg:grid lg:grid-cols-12 gap-4 relative mt-2">
         
         {/* Left Sidebar (Pillar 1 & 2) */}
-        <aside className="col-span-3 flex flex-col gap-4 h-[calc(100vh-160px)] sticky top-4">
+        <aside className="lg:col-span-3 flex flex-col gap-4 lg:h-[calc(100vh-160px)] lg:sticky lg:top-4">
           <div className="glass-panel p-4 flex flex-col shrink-0">
             <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3 border-b border-dark-700 pb-2">
               Case Library
@@ -341,7 +341,7 @@ export default function App() {
         </aside>
 
         {/* Transcript Area */}
-        <section className="col-span-5 flex flex-col gap-4 sticky top-4 h-[calc(100vh-160px)] z-20">
+        <section className="lg:col-span-5 flex flex-col gap-4 lg:sticky lg:top-4 lg:h-[calc(100vh-160px)] z-20 min-h-[60vh]">
           <div className="glass-panel p-5 flex-1 flex flex-col h-full min-h-0">
             <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-4 border-b border-dark-700 pb-2 flex items-center justify-between">
               <span className="flex items-center gap-2">
@@ -396,7 +396,7 @@ export default function App() {
                     <div 
                       key={turn.id} 
                       id={`turn-${turn.id}`} 
-                      className={`flex flex-col ${turn.role === 'user' ? 'items-end' : 'items-start'} max-w-full relative group transition-all duration-300 ${isHighlighted ? 'z-10 translate-x-1' : ''} ${highlightedConflictTurn === turn.id ? 'z-20' : ''}`}
+                      className={`flex flex-col ${turn.role === 'user' ? 'items-end' : 'items-start'} max-w-full relative group transition-all duration-300 ${isHighlighted ? 'z-10' : ''} ${highlightedConflictTurn === turn.id ? 'z-20' : ''}`}
                       onMouseEnter={() => {
                         if (turn.role === 'ai') setHoveredTurnIndex(thisAiIndex);
                       }}
@@ -408,7 +408,8 @@ export default function App() {
                         {turn.role === 'user' ? 'USER' : 'TARGET AGENT'}
                       </div>
                       <div className={`
-                        p-3 rounded-2xl max-w-[85%] text-sm leading-relaxed shadow-sm transition-[background-color,border-color,box-shadow] duration-150
+                        p-3 rounded-2xl max-w-[85%] text-sm leading-relaxed shadow-sm transition-all duration-150
+                        ${isHighlighted ? 'translate-x-1' : ''}
                         ${highlightedConflictTurn === turn.id
                           ? 'bg-frontier-amber/15 text-amber-100 rounded-tl-sm border-2 border-frontier-amber/60 ring-2 ring-frontier-amber/40 shadow-[0_0_20px_rgba(245,158,11,0.3)] animate-pulse'
                           : isHighlighted
@@ -509,8 +510,8 @@ export default function App() {
         </section>
 
         {/* Pillar 4: Evidence Vault */}
-        <aside className="col-span-4 flex flex-col gap-4">
-          <div className="glass-panel p-5 flex flex-col h-[calc(100vh-160px)]">
+        <aside className="lg:col-span-4 flex flex-col gap-4">
+          <div className="glass-panel p-5 flex flex-col lg:h-[calc(100vh-160px)] min-h-[60vh]">
             <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-4 border-b border-dark-700 pb-2">
               RAW ARTIFACTS - API PROVENANCE
             </h2>
@@ -906,7 +907,7 @@ export default function App() {
                   <Activity size={16} className="text-frontier-amber" /> The Xu Bottleneck
                 </h3>
                 <p className="leading-relaxed">
-                  High model confidence (90%+) was present in 3/4 failure cases. This empirically proves that <span className="text-white font-semibold">Confidence-based routing is an insufficient safety gate</span> in high-ambiguity domains. The models were highly confident while producing catastrophic policy violations.
+                  High model confidence (90%+) was present in 3/4 failure cases. This empirically proves that <a href="https://arxiv.org/abs/2605.04070" target="_blank" rel="noopener noreferrer" className="text-frontier-amber font-bold hover:underline cursor-pointer">Confidence-based routing is an insufficient safety gate</a> in high-ambiguity domains. The models were highly confident while producing catastrophic policy violations.
                 </p>
               </div>
 
